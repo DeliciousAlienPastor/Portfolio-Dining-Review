@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -23,10 +25,15 @@ import lombok.ToString;
 @ToString
 public class DiningReview {
   @Id
+  @Column(name = "ID")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
+  
   @Column(name = "NAME")
   private String name;
+
+  @Column(name = "RESTAURANT_ID")
+  private Long restaurant_id;
 
   @Column(name = "PEANUT_SCORE")
   private Float peanutScore;
@@ -40,10 +47,10 @@ public class DiningReview {
   @Column(name = "COMMENT")
   private String comment;
 
-  // @OneToOne(cascade = CascadeType.ALL)
-  // @JoinColumn(name = "restaurantId", referencedColumnName = "ID")
-  // private Restaurant restaurant;
-
+  @Column(name = "REVIEW_STATUS")
   @Enumerated(EnumType.STRING)
   private ReviewStatus reviewStatus;
 }
+// @OneToOne(cascade = CascadeType.ALL)
+// @JoinColumn(name = "restaurantId", referencedColumnName = "ID")
+// private Restaurant restaurant;

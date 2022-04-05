@@ -24,6 +24,7 @@ public class UserService {
   }
 
   // Add/register new user
+  /*
   public void registerUser(User user) {
     Optional<User> userOptional = userRepository.findById(getId());
     if (userOptional.isPresent()) {
@@ -31,4 +32,5 @@ public class UserService {
     }
     userRepository.save(user);
   }
+  */
 }
