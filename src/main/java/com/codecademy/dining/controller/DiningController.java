@@ -1,8 +1,13 @@
 package com.codecademy.dining.controller;
 
+import java.util.Optional;
+
+import com.codecademy.dining.model.entities.*;
 import com.codecademy.dining.model.services.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,5 +26,19 @@ public class DiningController {
     this.restaurantService = restaurantService;
   }
 
-  // REST goes below
+  // User REST endpoints
+  @GetMapping(path = "users/")
+  public Iterable<User> getUsers() {
+    return userService.getUsers();
+  }
+
+  // fetch user belonging to the given display name
+  @GetMapping(path = "users/{userName}")
+  public Optional<User> getUserByName(@PathVariable("userName") String name){
+    return userService.getUserByName(name);
+  }
+
+  // Restaurant REST endpoints
+
+  // Dining review REST endpoints
 }

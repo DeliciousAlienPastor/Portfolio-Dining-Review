@@ -45,4 +45,8 @@ public class User {
   @Column(name = "BOOL_DAIRY")
   private boolean interestedInDairy;
 
+  public Long getId() {
+    return id;
+  }
+
 }
