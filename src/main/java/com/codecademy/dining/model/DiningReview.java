@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import com.codecademy.dining.enums.ReviewStatus;
 
@@ -15,6 +15,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
+@Table(name = "DINING_REVIEW")
 
 @NoArgsConstructor
 @Getter
@@ -39,8 +40,9 @@ public class DiningReview {
   @Column(name = "COMMENT")
   private String comment;
 
-  @OneToOne
-  private Restaurant restaurant;
+  // @OneToOne(cascade = CascadeType.ALL)
+  // @JoinColumn(name = "restaurantId", referencedColumnName = "ID")
+  // private Restaurant restaurant;
 
   @Enumerated(EnumType.STRING)
   private ReviewStatus reviewStatus;

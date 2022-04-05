@@ -6,5 +6,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AdminReview {
-  private Boolean acceptReview = false;
+  private String reviewStatus = "";
 }

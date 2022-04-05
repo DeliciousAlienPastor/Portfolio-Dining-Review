@@ -3,6 +3,7 @@ package com.codecademy.dining.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-
+@Table(name = "USER")
 @NoArgsConstructor
 @Getter
 @Setter
@@ -32,11 +33,12 @@ public class User {
   private Long zipCode;
 
   @Column(name = "INTERESTED_IN_PEANUT")
-  private Boolean interestedInPeanut;
+  private boolean interestedInPeanut;
 
   @Column(name = "INTERESTED_IN_EGG")
-  private Boolean interestedInEgg;
+  private boolean interestedInEgg;
 
   @Column(name = "INTERESTED_IN_DAIRY")
-  private Boolean interestedInDairy;
+  private boolean interestedInDairy;
+
 }
