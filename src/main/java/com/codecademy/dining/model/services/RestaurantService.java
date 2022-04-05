@@ -1,6 +1,6 @@
-package com.codecademy.dining.services;
+package com.codecademy.dining.model.services;
 
-import com.codecademy.dining.repository.RestaurantRepository;
+import com.codecademy.dining.model.repositories.RestaurantRepository;
 
 import org.springframework.stereotype.Service;
 

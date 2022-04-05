@@ -1,4 +1,4 @@
-package com.codecademy.dining.model;
+package com.codecademy.dining.model.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,13 +32,13 @@ public class User {
   @Column(name = "ZIPCODE")
   private Long zipCode;
 
-  @Column(name = "INTERESTED_IN_PEANUT")
+  @Column(name = "BOOL_PEANUT")
   private boolean interestedInPeanut;
 
-  @Column(name = "INTERESTED_IN_EGG")
+  @Column(name = "BOOL_EGG")
   private boolean interestedInEgg;
 
-  @Column(name = "INTERESTED_IN_DAIRY")
+  @Column(name = "BOOL_DAIRY")
   private boolean interestedInDairy;
 
 }

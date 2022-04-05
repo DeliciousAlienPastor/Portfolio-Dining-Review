@@ -1,6 +1,6 @@
 package com.codecademy.dining.controller;
 
-import com.codecademy.dining.services.*;
+import com.codecademy.dining.model.services.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

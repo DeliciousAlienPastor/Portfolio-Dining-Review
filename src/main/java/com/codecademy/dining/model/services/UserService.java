@@ -1,10 +1,10 @@
-package com.codecademy.dining.services;
+package com.codecademy.dining.model.services;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.codecademy.dining.model.User;
-import com.codecademy.dining.repository.UserRepository;
+import com.codecademy.dining.model.entities.User;
+import com.codecademy.dining.model.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

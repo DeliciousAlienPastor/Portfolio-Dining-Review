@@ -1,4 +1,4 @@
-package com.codecademy.dining.model;
+package com.codecademy.dining.model.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -31,8 +31,12 @@ public class Restaurant {
   @Column(name = "CONTACT")
   private Long contact;
 
-  @Column(name = "ADDRESS")
-  private String address;
+  @Column(name = "LOCATION")
+  private String location;
+
+  @Column(name = "ZIPCODE")
+  private Long zipCode;
+  
 
   // @OneToOne(mappedBy = "DINING_REVIEW")
   // private DiningReview diningReview;

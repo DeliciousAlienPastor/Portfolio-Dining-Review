@@ -1,4 +1,4 @@
-package com.codecademy.dining.model;
+package com.codecademy.dining.model.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,7 +7,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.codecademy.dining.enums.ReviewStatus;
+import com.codecademy.dining.model.enums.ReviewStatus;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
