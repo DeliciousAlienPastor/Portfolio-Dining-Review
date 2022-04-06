@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,9 +17,8 @@ import lombok.ToString;
 @Entity
 @Table(name = "USER")
 @NoArgsConstructor
-@Getter
-@Setter
-@ToString
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class User {
   @Id
   @Column(name = "ID")
@@ -44,9 +45,5 @@ public class User {
 
   @Column(name = "BOOL_DAIRY")
   private boolean interestedInDairy;
-
-  public Long getId() {
-    return id;
-  }
 
 }

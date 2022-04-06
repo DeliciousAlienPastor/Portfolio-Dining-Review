@@ -1,6 +1,7 @@
 package com.codecademy.dining.model.services;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import com.codecademy.dining.model.entities.User;
@@ -41,7 +42,22 @@ public class UserService {
     if (userOptional.isPresent()) {
       throw new ResponseStatusException(HttpStatus.NOT_FOUND, "This user already exists.");
     }
-    userRepository.save(user);
-    return null;
+    return userRepository.save(user);
+  }
+
+  // Update existing user
+  public User updateUser(String userName, User newUser) {
+    User user = userRepository.findByName(userName)
+        .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+            "The user with name" + userName + " is not availabale."));
+
+    user.setCity(newUser.getCity());
+    user.setState(newUser.getState());
+    user.setZipCode(newUser.getZipCode());
+    user.setIsInterestedInPeanut(newUser.getIsInterestedInPeanut());
+    user.setIsInterestedInEgg(newUser.getIsInterestedInEgg());
+    user.setIsInterestedInDairy(newUser.getIsInterestedInDairy());
+
+    return userRepository.save(user);
   }
 }
