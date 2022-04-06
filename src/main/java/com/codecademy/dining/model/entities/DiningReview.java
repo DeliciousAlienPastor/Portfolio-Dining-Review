@@ -24,32 +24,32 @@ import lombok.ToString;
 @Setter
 @ToString
 public class DiningReview {
-  @Id
-  @Column(name = "ID")
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
-  
-  @Column(name = "NAME")
-  private String name;
+    @Id
+    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  @Column(name = "RESTAURANT_ID")
-  private Long restaurant_id;
+    @Column(name = "NAME")
+    private String name;
 
-  @Column(name = "PEANUT_SCORE")
-  private Float peanutScore;
+    @Column(name = "RESTAURANT_ID")
+    private Long restaurant_id;
 
-  @Column(name = "EGG_SCORE")
-  private Float eggScore;
+    @Column(name = "PEANUT_SCORE")
+    private Float peanutScore;
 
-  @Column(name = "DAIRY_SCORE")
-  private Float dairyScore;
+    @Column(name = "EGG_SCORE")
+    private Float eggScore;
 
-  @Column(name = "COMMENT")
-  private String comment;
+    @Column(name = "DAIRY_SCORE")
+    private Float dairyScore;
 
-  @Column(name = "REVIEW_STATUS")
-  @Enumerated(EnumType.STRING)
-  private ReviewStatus reviewStatus;
+    @Column(name = "COMMENT")
+    private String comment;
+
+    @Column(name = "REVIEW_STATUS")
+    @Enumerated(EnumType.STRING)
+    private ReviewStatus reviewStatus;
 }
 // @OneToOne(cascade = CascadeType.ALL)
 // @JoinColumn(name = "restaurantId", referencedColumnName = "ID")

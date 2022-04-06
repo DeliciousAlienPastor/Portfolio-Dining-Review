@@ -21,25 +21,25 @@ import lombok.ToString;
 @ToString
 public class Restaurant {
 
-  @Id
-  @Column(name = "ID")
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+    @Id
+    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  @Column(name = "NAME")
-  private String name;
+    @Column(name = "NAME")
+    private String name;
 
-  @Column(name = "CONTACT")
-  private Long contact;
+    @Column(name = "CONTACT")
+    private Long contact;
 
-  @Column(name = "LOCATION")
-  private String location;
+    @Column(name = "LOCATION")
+    private String location;
 
-  @Column(name = "ZIPCODE")
-  private Long zipCode;
-  
+    @Column(name = "ZIPCODE")
+    private Long zipCode;
 
-  // @OneToOne(mappedBy = "DINING_REVIEW")
-  // private DiningReview diningReview;
+
+    // @OneToOne(mappedBy = "DINING_REVIEW")
+    // private DiningReview diningReview;
 
 }

@@ -6,10 +6,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class RestaurantService {
-  private final RestaurantRepository restaurantRepository;
+    private final RestaurantRepository restaurantRepository;
 
-  public RestaurantService(RestaurantRepository restaurantRepository) {
-    this.restaurantRepository = restaurantRepository;
-  }
-  // Methods for restaurant repo go here
+    public RestaurantService(RestaurantRepository restaurantRepository) {
+        this.restaurantRepository = restaurantRepository;
+    }
+    // Methods for restaurant repo go here
 }

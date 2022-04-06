@@ -7,43 +7,37 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Entity
 @Table(name = "USER")
 @NoArgsConstructor
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class User {
-  @Id
-  @Column(name = "ID")
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+    @Id
+    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  @Column(name = "NAME")
-  private String name;
+    @Column(name = "NAME", unique = true)
+    private String name;
 
-  @Column(name = "CITY")
-  private String city;
+    @Column(name = "CITY")
+    private String city;
 
-  @Column(name = "STATE")
-  private String state;
+    @Column(name = "STATE")
+    private String state;
 
-  @Column(name = "ZIPCODE")
-  private Long zipCode;
+    @Column(name = "ZIPCODE")
+    private Long zipCode;
 
-  @Column(name = "BOOL_PEANUT")
-  private boolean interestedInPeanut;
+    @Column(name = "BOOL_PEANUT")
+    private boolean interestedInPeanut;
 
-  @Column(name = "BOOL_EGG")
-  private boolean interestedInEgg;
+    @Column(name = "BOOL_EGG")
+    private boolean interestedInEgg;
 
-  @Column(name = "BOOL_DAIRY")
-  private boolean interestedInDairy;
+    @Column(name = "BOOL_DAIRY")
+    private boolean interestedInDairy;
 
 }
