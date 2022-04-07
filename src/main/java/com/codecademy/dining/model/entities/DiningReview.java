@@ -33,7 +33,7 @@ public class DiningReview {
     private String name;
 
     @Column(name = "RESTAURANT_ID")
-    private Long restaurant_id;
+    private Long restaurantId;
 
     @Column(name = "PEANUT_SCORE")
     private Float peanutScore;

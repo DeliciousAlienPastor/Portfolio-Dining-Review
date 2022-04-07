@@ -63,8 +63,8 @@ public class UserService {
     // Delete existing user
     public User deleteUser(String userName) {
         Optional<User> deleteUserOptional = userRepository.findByName(userName);
-        if (!deleteUserOptional.isPresent()) {
-            new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found");
+        if (deleteUserOptional.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found");
         }
         User userToDelete = deleteUserOptional.get();
         userRepository.delete(userToDelete);

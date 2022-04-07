@@ -1,6 +1,7 @@
 package com.codecademy.dining.controller;
 
 import java.util.Optional;
+import java.util.List;
 
 import com.codecademy.dining.model.entities.*;
 import com.codecademy.dining.model.services.*;
@@ -74,5 +75,19 @@ public class DiningController {
     @PostMapping(path = "reviews")
     public DiningReview addNewReview(@RequestBody DiningReview diningReview) {
         return diningReviewService.addNewReview(diningReview);
+    }
+
+    @GetMapping(path = "admins/reviews/pending")
+    public Optional<DiningReview> getAllByReviewStatus() {
+        return diningReviewService.getAllPending();
+    }
+
+    // change review status
+    @PutMapping(path = "admins/reviews/{reviewId}/{status}")
+    public DiningReview changeReviewStatus(
+            @PathVariable("reviewId") Long reviewId,
+            @PathVariable("status") String status
+    ) {
+        return diningReviewService.changeReviewStatus(reviewId, status);
     }
 }
